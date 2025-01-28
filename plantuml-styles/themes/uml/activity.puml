@@ -1,0 +1,13 @@
+' Estilos para diagramas de actividad
+
+!include ../../config/colors.puml
+!include ../../config/fonts.puml
+!include ../../config/styles.puml
+
+' Personalización de actividades
+skinparam activity {
+    BackgroundColor LIGHT_PRIMARY
+    BorderColor LIGHT_BORDER
+    FontColor LIGHT_TEXT
+    FontSize FONT_NORMAL
+}

@@ -1,0 +1,12 @@
+@startuml
+!include ../themes/architecture/generic.puml
+
+rectangle "Load Balancer" as lb
+cloud "AWS Cloud" as cloud
+rectangle "Web Server" as web
+rectangle "Database" as db
+
+lb --> web
+web --> db
+
+@enduml

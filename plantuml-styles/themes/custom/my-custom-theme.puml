@@ -1,0 +1,13 @@
+' Espacio para personalizaciones específicas
+
+!include ../../config/colors.puml
+!include ../../config/fonts.puml
+!include ../../config/styles.puml
+
+' Ejemplo de personalización
+skinparam rectangle {
+    BackgroundColor #FFD700
+    BorderColor #DAA520
+    FontColor #333333
+    FontSize FONT_LARGE
+}

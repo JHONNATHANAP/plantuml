@@ -1,0 +1,13 @@
+' Estilos para diagramas de casos de uso
+
+!include ../../config/colors.puml
+!include ../../config/fonts.puml
+!include ../../config/styles.puml
+
+' Personalización de casos de uso
+skinparam usecase {
+    BackgroundColor LIGHT_SECONDARY
+    BorderColor LIGHT_BORDER
+    FontColor LIGHT_TEXT
+    FontSize FONT_NORMAL
+}

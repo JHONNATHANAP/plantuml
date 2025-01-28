@@ -1,0 +1,13 @@
+' 🎨 Configuración de fuentes escalable
+
+!define FONT_DEFAULT "Roboto, sans-serif"
+!define FONT_MONO "Courier New"
+!define FONT_SERIF "Times New Roman"
+
+!define FONT_SIZE_SMALL 12
+!define FONT_SIZE_NORMAL 16
+!define FONT_SIZE_LARGE 20
+!define FONT_SIZE_EXTRA_LARGE 26
+
+skinparam defaultFontName FONT_DEFAULT
+skinparam defaultFontSize FONT_SIZE_NORMAL

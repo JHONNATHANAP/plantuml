@@ -1,0 +1,78 @@
+@startuml
+' !define ENVIRONMENT_D_LOCAL
+
+!ifdef ENVIRONMENT_D_LOCAL
+    !include ../themes/uml/sequence.puml
+!else
+    !includeurl https://raw.githubusercontent.com/JHONNATHANAP/plantuml/master/plantuml-styles/themes/uml/sequence.puml
+!endif
+
+
+actor Client
+participant "Frontend (Angular)" as Frontend
+participant "Backend (.NET, Redis, OAuth)" as Backend
+participant "IdentityDB (PostgreSQL)" as IdentityDB
+
+== Login with Credentials ==
+Client -> Frontend: Requests login
+Frontend -> Backend: Request to /start (ClientId, RedirectUri, CodeChallenge, CodeMethod, Scope, State)
+Backend -> Backend: Stores initial data in Redis
+Backend --> Frontend: sessionId, session cookies, derived keys
+Frontend -> Frontend: Encrypts credentials, state, and codeVerifier with derived keys
+Frontend -> Frontend: Stores encrypted state and codeVerifier in sessionStorage
+
+Client -> Frontend: Provides credentials (email/password)
+Frontend -> Frontend: Encrypts credentials with a derived key
+Frontend -> Backend: Request to /sign-in (encryptedPayload, sessionId, IV)
+Backend -> Backend: Validates session and retrieves derived keys
+Backend -> Backend: Decrypts credentials
+Backend -> Backend: Retrieves initial data from Redis
+Backend -> IdentityDB: Verifies credentials in database
+alt Valid credentials
+    Backend -> Backend: Generates authorization code (authCode)
+    Backend --> Frontend: authCode and state (as query params in the redirectUri)
+    Frontend -> Frontend: Decrypts state with derived keys
+    Frontend -> Frontend: Validates state
+    Frontend -> Backend: Sends authCode and codeVerifier to get tokens
+    Backend -> Backend: Verifies authCode and validates codeChallenge with codeVerifier
+    Backend -> Backend: Creates session tokens
+    Backend --> Frontend: Cookies with session tokens
+else Invalid credentials
+    Backend --> Frontend: Error (invalid credentials)
+end
+
+== Login with Google ==
+Client -> Frontend: Starts Google Sign-In
+Frontend -> Backend: Redirects to /sign-in/google/start
+Backend -> Backend: Generates Google OAuth URL
+Backend --> Frontend: Redirects to Google
+Client -> Google: Provides credentials
+Google -> Backend: Callback with Google authorization code and user email
+Backend -> Backend: Verifies Google auth
+Backend -> IdentityDB: Verifies Google email
+alt Successful authorization
+    Backend -> Backend: Generates authorization code (authCode)
+    Backend --> Frontend: authCode and state (as query params in the redirectUri)
+    Frontend -> Backend: Request to /keys (sessionId in cookies)
+    Backend -> Backend: Retrieves derived keys from Redis
+    Backend --> Frontend: Derived keys
+    Frontend -> Frontend: Decrypts state and codeVerifier with derived keys
+    Frontend -> Frontend: Validates state
+    Frontend -> Backend: Sends authCode and codeVerifier to get tokens
+    Backend -> Backend: Verifies authCode and validates codeChallenge with codeVerifier
+    Backend -> Backend: Creates session tokens
+    Backend --> Frontend: Cookies with session tokens
+else Google OAuth Error
+    Backend --> Frontend: Error (authorization failed)
+end
+
+== Token Renewal ==
+Frontend -> Backend: Request to /refresh-token
+Backend -> Backend: Validates and renews tokens
+alt Valid token
+    Backend --> Frontend: New cookies with tokens
+else Invalid or expired token
+    Backend --> Frontend: Error (invalid token)
+end
+
+@enduml

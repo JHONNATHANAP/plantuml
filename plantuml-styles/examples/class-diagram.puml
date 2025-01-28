@@ -1,0 +1,17 @@
+@startuml
+!include ../themes/uml/class-diagrams.puml
+
+class User {
+    + name: String
+    + email: String
+    + login(): void
+}
+
+class Admin {
+    + role: String
+    + manageUsers(): void
+}
+
+User <|-- Admin
+
+@enduml

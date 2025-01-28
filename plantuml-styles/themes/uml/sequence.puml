@@ -1,0 +1,95 @@
+' !define ENVIRONMENT_D_LOCAL
+
+!ifdef ENVIRONMENT_D_LOCAL
+    !include ../../config/index.puml
+!else
+    !includeurl https://raw.githubusercontent.com/JHONNATHANAP/plantuml/master/plantuml-styles/config/index.puml
+!endif
+
+
+' 🔷 Configuración general del diagrama de secuencia
+skinparam sequence {
+    ParticipantBackgroundColor PRIMARY_2
+    ParticipantBorderColor PRIMARY_6
+    ParticipantFontColor NEUTRAL_10
+    ParticipantFontSize FONT_SIZE_NORMAL
+    ParticipantFontName FONT_DEFAULT
+    LifeLineColor NEUTRAL_5
+    LifeLineThickness BORDER_THICKNESS_2
+    LifeLineBackgroundColor PRIMARY_1
+    ArrowColor PRIMARY_7
+    ArrowThickness BORDER_THICKNESS_3
+    ArrowFontSize FONT_SIZE_NORMAL
+    ArrowFontColor NEUTRAL_10
+    shadowing false
+}
+
+' 📦 Configuración de actores con bordes y padding flexibles
+skinparam actor {
+    BackgroundColor SECONDARY_3
+    BorderColor SECONDARY_7
+    FontColor NEUTRAL_10
+    FontSize FONT_SIZE_LARGE
+    FontName FONT_DEFAULT
+    BorderThickness BORDER_THICKNESS_3
+    Padding PADDING_5
+    RoundCorner BORDER_RADIUS_5
+}
+
+' 📦 Configuración de participantes con bordes y padding flexibles
+skinparam participant {
+    BackgroundColor PRIMARY_2
+    BorderColor PRIMARY_7
+    FontColor NEUTRAL_10
+    FontSize FONT_SIZE_NORMAL
+    FontName FONT_DEFAULT
+    BorderThickness BORDER_THICKNESS_3
+    Padding PADDING_5
+    RoundCorner BORDER_RADIUS_5
+}
+
+' 🔄 Configuración de grupos (alt, loop, etc.) con bordes y padding ajustables
+skinparam sequenceGroup {
+    BackgroundColor TERTIARY_2
+    BorderColor TERTIARY_6
+    FontColor NEUTRAL_10
+    FontSize FONT_SIZE_NORMAL
+    HeaderBackgroundColor TERTIARY_8
+    HeaderFontColor NEUTRAL_1
+    HeaderFontSize FONT_SIZE_LARGE
+    Padding PADDING_6
+    RoundCorner BORDER_RADIUS_6
+}
+
+' ➖ Configuración de divisores (== Sección ==) con más padding y bordes
+skinparam sequenceDivider {
+    BackgroundColor PRIMARY_6
+    BorderColor PRIMARY_6
+    FontColor NEUTRAL_1
+    FontName FONT_MONO
+    FontSize FONT_SIZE_LARGE
+    BorderThickness BORDER_THICKNESS_3
+    Padding PADDING_6
+    RoundCorner BORDER_RADIUS_6
+}
+
+' 📌 Mensajes entre participantes con padding y bordes ajustables
+skinparam sequenceMessage {
+    ArrowColor PRIMARY_7
+    ArrowThickness BORDER_THICKNESS_3
+    FontColor NEUTRAL_10
+    FontSize FONT_SIZE_NORMAL
+    BorderColor NEUTRAL_5
+    Padding PADDING_3
+}
+
+' ❌ Configuración de mensajes de error con bordes y padding flexibles
+skinparam sequenceMessageError {
+    ArrowColor ERROR_COLOR
+    FontColor ERROR_COLOR
+    FontSize FONT_SIZE_NORMAL
+    ArrowThickness BORDER_THICKNESS_4
+    BorderColor NEUTRAL_5
+    Padding PADDING_3
+}
+

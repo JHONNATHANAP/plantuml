@@ -1,0 +1,19 @@
+' Estilos genéricos para diagramas de arquitectura
+
+!include ../../config/colors.puml
+!include ../../config/fonts.puml
+!include ../../config/styles.puml
+
+' Personalizaciones específicas
+skinparam rectangle {
+    BackgroundColor LIGHT_PRIMARY
+    BorderColor LIGHT_BORDER
+    FontColor LIGHT_TEXT
+    FontSize FONT_NORMAL
+}
+skinparam cloud {
+    BackgroundColor LIGHT_SECONDARY
+    BorderColor LIGHT_BORDER
+    FontColor LIGHT_TEXT
+    FontSize FONT_NORMAL
+}

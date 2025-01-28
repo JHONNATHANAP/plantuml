@@ -1,0 +1,23 @@
+' 📦 Variables de Espaciado (1-10)
+!define PADDING_1 2
+!define PADDING_2 4
+!define PADDING_3 6
+!define PADDING_4 8
+!define PADDING_5 10
+!define PADDING_6 12
+!define PADDING_7 14
+!define PADDING_8 16
+!define PADDING_9 18
+!define PADDING_10 20
+
+' 📦 Margen (1-10)
+!define MARGIN_1 2
+!define MARGIN_2 4
+!define MARGIN_3 6
+!define MARGIN_4 8
+!define MARGIN_5 10
+!define MARGIN_6 12
+!define MARGIN_7 14
+!define MARGIN_8 16
+!define MARGIN_9 18
+!define MARGIN_10 20

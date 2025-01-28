@@ -1,0 +1,55 @@
+' 🎨 Gama de colores escalables (1 al 10)
+
+' 🔵 Primary (Azul)
+!define PRIMARY_1 #E3F2FD
+!define PRIMARY_2 #BBDEFB
+!define PRIMARY_3 #90CAF9
+!define PRIMARY_4 #64B5F6
+!define PRIMARY_5 #42A5F5
+!define PRIMARY_6 #2196F3
+!define PRIMARY_7 #1E88E5
+!define PRIMARY_8 #1976D2
+!define PRIMARY_9 #1565C0
+!define PRIMARY_10 #0D47A1
+
+' 🟠 Secondary (Naranja)
+!define SECONDARY_1 #FFF3E0
+!define SECONDARY_2 #FFE0B2
+!define SECONDARY_3 #FFCC80
+!define SECONDARY_4 #FFB74D
+!define SECONDARY_5 #FFA726
+!define SECONDARY_6 #FF9800
+!define SECONDARY_7 #FB8C00
+!define SECONDARY_8 #F57C00
+!define SECONDARY_9 #EF6C00
+!define SECONDARY_10 #E65100
+
+' 🟣 Tertiary (Morado)
+!define TERTIARY_1 #F3E5F5
+!define TERTIARY_2 #E1BEE7
+!define TERTIARY_3 #CE93D8
+!define TERTIARY_4 #BA68C8
+!define TERTIARY_5 #AB47BC
+!define TERTIARY_6 #9C27B0
+!define TERTIARY_7 #8E24AA
+!define TERTIARY_8 #7B1FA2
+!define TERTIARY_9 #6A1B9A
+!define TERTIARY_10 #4A148C
+
+' 🔳 Neutral / Grises
+!define NEUTRAL_1 #FAFAFA
+!define NEUTRAL_2 #F5F5F5
+!define NEUTRAL_3 #EEEEEE
+!define NEUTRAL_4 #E0E0E0
+!define NEUTRAL_5 #BDBDBD
+!define NEUTRAL_6 #9E9E9E
+!define NEUTRAL_7 #757575
+!define NEUTRAL_8 #616161
+!define NEUTRAL_9 #424242
+!define NEUTRAL_10 #212121
+
+' 🟢 Estado / Otros
+!define SUCCESS_COLOR #2E7D32
+!define ERROR_COLOR #D32F2F
+!define WARNING_COLOR #FF8F00
+!define INFO_COLOR #0288D1

@@ -1,0 +1,14 @@
+' !define ENVIRONMENT_D_LOCAL
+
+!ifdef ENVIRONMENT_D_LOCAL
+    !include colors.puml
+    !include fonts.puml
+    !include spacing.puml
+    !include borders.puml
+!else
+    !includeurl https://raw.githubusercontent.com/JHONNATHANAP/plantuml/master/plantuml-styles/config/colors.puml
+    !includeurl https://raw.githubusercontent.com/JHONNATHANAP/plantuml/master/plantuml-styles/config/fonts.puml
+    !includeurl https://raw.githubusercontent.com/JHONNATHANAP/plantuml/master/plantuml-styles/config/spacing.puml
+    !includeurl https://raw.githubusercontent.com/JHONNATHANAP/plantuml/master/plantuml-styles/config/borders.puml
+    !includeurl https://raw.githubusercontent.com/JHONNATHANAP/plantuml/master/plantuml-styles/themes/uml/sequence.puml
+!endif

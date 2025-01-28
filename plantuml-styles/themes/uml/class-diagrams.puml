@@ -1,0 +1,13 @@
+' Estilos para diagramas de clases
+
+!include ../../config/colors.puml
+!include ../../config/fonts.puml
+!include ../../config/styles.puml
+
+' Personalización de estilos para clases
+skinparam class {
+    BackgroundColor LIGHT_BACKGROUND
+    BorderColor LIGHT_PRIMARY
+    FontColor LIGHT_TEXT
+    FontSize FONT_NORMAL
+}
